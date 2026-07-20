@@ -1,0 +1,582 @@
+---
+const featuredResearch = [
+  {
+    category: "Threat Intelligence",
+    title: "Mapping the Infrastructure Behind Modern Cyber Operations",
+    description:
+      "An infrastructure-first examination of how adversaries deploy, rotate, and conceal operational systems.",
+    date: "Coming soon",
+  },
+  {
+    category: "Artificial Intelligence",
+    title: "The Intelligence Implications of Autonomous Systems",
+    description:
+      "Research into how agentic AI changes collection, analysis, attribution, and decision-making.",
+    date: "Coming soon",
+  },
+  {
+    category: "Strategic Analysis",
+    title: "Signals in the Noise",
+    description:
+      "A practical framework for distinguishing consequential developments from short-lived technical activity.",
+    date: "Coming soon",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
+    <meta
+      name="description"
+      content="Campbell Intelligence publishes independent research on threat infrastructure, artificial intelligence, technical investigations, and strategic risk."
+    />
+
+    <title>Campbell Intelligence</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="Campbell Intelligence home">
+        Campbell Intelligence
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Independent intelligence research</p>
+
+        <h1>
+          Research for a world shaped by
+          <em>infrastructure, intelligence, and change.</em>
+        </h1>
+
+        <p class="hero-copy">
+          Campbell Intelligence publishes rigorous research on threat
+          infrastructure, artificial intelligence, technical investigations,
+          and strategic risk.
+        </p>
+
+        <a class="text-link" href="#research">
+          Explore the research
+          <span aria-hidden="true">→</span>
+        </a>
+      </section>
+
+      <section class="principles" aria-label="Research principles">
+        <div>
+          <span>01</span>
+          <p>Evidence before assumption</p>
+        </div>
+
+        <div>
+          <span>02</span>
+          <p>Infrastructure before narrative</p>
+        </div>
+
+        <div>
+          <span>03</span>
+          <p>Clarity without simplification</p>
+        </div>
+      </section>
+
+      <section class="research-section" id="research">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selected work</p>
+            <h2>Research and analysis</h2>
+          </div>
+
+          <p>
+            Long-form investigations and strategic analysis designed for
+            practitioners, researchers, and decision-makers.
+          </p>
+        </div>
+
+        <div class="research-grid">
+          {
+            featuredResearch.map((article, index) => (
+              <article class:list={{ featured: index === 0 }}>
+                <div class="article-meta">
+                  <span>{article.category}</span>
+                  <span>{article.date}</span>
+                </div>
+
+                <h3>{article.title}</h3>
+                <p>{article.description}</p>
+
+                <span class="article-link">
+                  Read analysis
+                  <span aria-hidden="true">↗</span>
+                </span>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="about-section" id="about">
+        <p class="eyebrow">About the organization</p>
+
+        <div class="about-grid">
+          <h2>
+            Intelligence should illuminate reality, not merely describe
+            activity.
+          </h2>
+
+          <div>
+            <p>
+              Campbell Intelligence is an independent research organization
+              focused on the systems, technologies, and strategic forces
+              shaping the modern security environment.
+            </p>
+
+            <p>
+              Our work combines technical evidence, infrastructure analysis,
+              and clear strategic judgment. The objective is not more
+              information. It is better understanding.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contact">
+        <p class="eyebrow">Contact</p>
+
+        <div>
+          <h2>Research inquiries and collaboration.</h2>
+
+          <p>
+            Contact information will be available when Campbell Intelligence
+            formally launches.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="wordmark" href="/">Campbell Intelligence</a>
+
+      <p>Independent research and strategic analysis.</p>
+
+      <p>© {new Date().getFullYear()} Campbell Intelligence</p>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Libre+Caslon+Display&display=swap");
+
+  :root {
+    --navy: #081521;
+    --navy-soft: #102231;
+    --paper: #f2efe7;
+    --paper-dark: #e6e1d5;
+    --gold: #aa8b50;
+    --ink-muted: #6c716f;
+    --line-dark: rgba(242, 239, 231, 0.18);
+    --line-light: rgba(8, 21, 33, 0.18);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--navy);
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-header {
+    min-height: 94px;
+    padding: 0 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--navy);
+    color: var(--paper);
+    border-bottom: 1px solid var(--line-dark);
+  }
+
+  .wordmark {
+    font-family: "Libre Caslon Display", Georgia, serif;
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+    letter-spacing: -0.02em;
+  }
+
+  nav {
+    display: flex;
+    gap: clamp(1rem, 3vw, 2.5rem);
+  }
+
+  nav a {
+    color: rgba(242, 239, 231, 0.72);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  nav a:hover {
+    color: var(--paper);
+  }
+
+  .hero {
+    min-height: 690px;
+    padding: 110px 5vw 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--navy);
+    color: var(--paper);
+  }
+
+  .eyebrow {
+    margin: 0 0 26px;
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: "Libre Caslon Display", Georgia, serif;
+    font-weight: 400;
+  }
+
+  h1 {
+    max-width: 1050px;
+    margin-bottom: 40px;
+    font-size: clamp(3.4rem, 7.3vw, 7.2rem);
+    line-height: 0.99;
+    letter-spacing: -0.048em;
+  }
+
+  h1 em {
+    color: #c8b88e;
+    font-weight: 400;
+  }
+
+  .hero-copy {
+    max-width: 650px;
+    margin-bottom: 35px;
+    color: rgba(242, 239, 231, 0.7);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+  }
+
+  .text-link {
+    width: fit-content;
+    padding-bottom: 7px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid var(--gold);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .principles {
+    padding: 0 5vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: var(--navy-soft);
+    color: var(--paper);
+    border-top: 1px solid var(--line-dark);
+  }
+
+  .principles div {
+    min-height: 150px;
+    padding: 34px 0;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    border-right: 1px solid var(--line-dark);
+  }
+
+  .principles div:not(:first-child) {
+    padding-left: 34px;
+  }
+
+  .principles div:last-child {
+    border-right: 0;
+  }
+
+  .principles span {
+    color: var(--gold);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  .principles p {
+    margin: 0;
+    font-family: "Libre Caslon Display", Georgia, serif;
+    font-size: clamp(1.05rem, 1.6vw, 1.3rem);
+    line-height: 1.35;
+  }
+
+  .research-section,
+  .about-section,
+  .contact-section {
+    padding: 110px 5vw;
+  }
+
+  .section-heading {
+    margin-bottom: 65px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 8vw;
+    align-items: end;
+  }
+
+  .section-heading h2,
+  .about-grid h2,
+  .contact-section h2 {
+    margin-bottom: 0;
+    font-size: clamp(2.7rem, 5vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .section-heading > p {
+    max-width: 470px;
+    margin-bottom: 8px;
+    color: var(--ink-muted);
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr;
+    border-top: 1px solid var(--line-light);
+    border-bottom: 1px solid var(--line-light);
+  }
+
+  article {
+    min-height: 430px;
+    padding: 38px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--line-light);
+  }
+
+  article:first-child {
+    padding-left: 0;
+  }
+
+  article:last-child {
+    border-right: 0;
+  }
+
+  .article-meta {
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: var(--ink-muted);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  article h3 {
+    max-width: 470px;
+    margin-bottom: 22px;
+    font-size: clamp(1.8rem, 2.7vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+  }
+
+  article p {
+    max-width: 430px;
+    color: var(--ink-muted);
+  }
+
+  .article-link {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.73rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .about-section {
+    background: var(--paper-dark);
+    border-top: 1px solid var(--line-light);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 10vw;
+  }
+
+  .about-grid > div {
+    padding-top: 18px;
+    color: #485258;
+    font-size: 1.05rem;
+  }
+
+  .contact-section {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 6vw;
+    background: var(--navy);
+    color: var(--paper);
+  }
+
+  .contact-section h2 {
+    max-width: 850px;
+    margin-bottom: 30px;
+  }
+
+  .contact-section div p {
+    color: rgba(242, 239, 231, 0.65);
+  }
+
+  footer {
+    min-height: 170px;
+    padding: 45px 5vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+    background: var(--navy);
+    color: var(--paper);
+    border-top: 1px solid var(--line-dark);
+  }
+
+  footer p {
+    margin: 0;
+    color: rgba(242, 239, 231, 0.48);
+    font-size: 0.72rem;
+  }
+
+  footer p:last-child {
+    text-align: right;
+  }
+
+  @media (max-width: 850px) {
+    .site-header {
+      padding-top: 25px;
+      padding-bottom: 25px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hero {
+      min-height: 610px;
+      padding-top: 80px;
+    }
+
+    .principles,
+    .research-grid,
+    .section-heading,
+    .about-grid,
+    .contact-section,
+    footer {
+      grid-template-columns: 1fr;
+    }
+
+    .principles {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .principles div,
+    .principles div:not(:first-child) {
+      min-height: auto;
+      padding: 26px 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .principles div:last-child {
+      border-bottom: 0;
+    }
+
+    .research-section,
+    .about-section,
+    .contact-section {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .research-grid {
+      border-bottom: 0;
+    }
+
+    article,
+    article:first-child {
+      min-height: 360px;
+      padding: 35px 0;
+      border-right: 0;
+      border-bottom: 1px solid var(--line-light);
+    }
+
+    .article-meta {
+      margin-bottom: 65px;
+    }
+
+    footer {
+      gap: 20px;
+    }
+
+    footer p:last-child {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 520px) {
+    nav {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    h1 {
+      font-size: 3.35rem;
+    }
+
+    .hero {
+      padding-top: 65px;
+      padding-bottom: 75px;
+    }
+  }
+</style>
